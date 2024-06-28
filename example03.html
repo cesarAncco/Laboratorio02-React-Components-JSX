@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example 3</title>
+  <!-- Load Babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+  <div id="root"></div>
+  <!--<Arituclo>
+    <Titulo>Componentes de React</Titulo>
+    <Caracteristicas>
+      <Caracteristica>Reutilizables</Caracteristica>
+      <Caracteristica>Reusables</Caracteristica>
+    </Caracteristicas>
+  </Arituclo> -->
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <script type="text/babel">
+    // export default function Titulo({ children }) {
+    //   return <h1>{children}</h1>;
+    // }
+    // export default function Caracteristica({ children }) {
+    //   return <li>{children}</li>;
+    // }
+    // export default function Caracteristicas({ children }) {
+    //   return <ul>{children}</ul>;
+    // }
+    function Arituclo({ children }) {
+      return <article>{children}</article>;
+    }
+
+    function App() {
+      return (
+        <Arituclo>
+          <h1>Componentes de React</h1>
+          <ul>
+            <li>Reutilizables</li>
+            <li>Reusables</li>
+          </ul>
+        </Arituclo>
+      );
+    }
+
+    const rootElement = document.getElementById('root');
+    ReactDOM.render(<App />, rootElement);
+  </script>
+</body>
+</html>

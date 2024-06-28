@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <a href="/example02.html">Ejercicio 2</a>
+    
+    <script type="module">
+      const root = document.getElementById('root');
+
+      const h1Element = React.createElement('h1', { className: 'titulo' }, 'Componentes de React');
+
+      const listUl = ['Reutilizables', 'Reusables'];
+
+      const listItemUl = listUl.map((item, index) =>
+        React.createElement('li', { key: index }, item)
+      );
+
+      const ulElement = React.createElement('ul', { className: 'caracteristicas' }, listItemUl);
+
+      const articleElement = React.createElement('article', null, h1Element, ulElement);
+
+
+      ReactDOM.render(articleElement, root)
+    </script>
+  </body>
+</html>
